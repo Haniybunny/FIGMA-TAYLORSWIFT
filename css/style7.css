@@ -1,0 +1,230 @@
+/* Background Setup */
+body {
+    background-color: #310D02; /* Warm backdrop surrounding unified box */
+    color: #D3C2A3;
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+/* The Single Unified Container Box */
+.unified-interface-box {
+    background-color: #4A1504; /* Deep mahogany red panel fill */
+    border: 1px solid #5D1F0E;
+    border-radius: 24px;
+    padding: 35px;
+    width: 100%;
+    max-width: 1150px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header Container Structure */
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    height: 220px;
+}
+
+/* Individual Floating/Scattered Lips Configuration */
+.kiss-scatter {
+    position: absolute;
+    
+    /* INCREASING SIZE: Adjusted from 55x40 to 90x65 to make them noticeably bigger */
+    width: 100px;
+    height: 75px;
+    
+    /* UPDATED: Path updated to cium.png with web-standard forward slashes */
+    background-image: url('/img/cium.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+    display: block;
+    z-index: 1;
+}
+
+/* Feel free to tweak these percentages to space them out perfectly! */
+.scatter-l1 { left: 2%; top: 15px; transform: rotate(-15deg); }
+.scatter-l2 { left: 14%; top: 100px; transform: rotate(12deg); }
+.scatter-l3 { left: 6%; top: 145px; transform: rotate(-5deg); }
+
+.scatter-r1 { right: 3%; top: 30px; transform: rotate(20deg); }
+.scatter-r2 { right: 13%; top: 85px; transform: rotate(-18deg); }
+.scatter-r3 { right: 5%; top: 150px; transform: rotate(8deg); }
+
+.carousel-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    z-index: 2;
+}
+
+/* Targets specifically the top, left, and right borders around the album picture container */
+.album-border-wrapper {
+    border-top: 2px solid #D3C2A3;
+    border-left: 2px solid #D3C2A3;
+    border-right: 2px solid #D3C2A3;
+    border-bottom: none; 
+    padding: 16px 16px 0 16px;
+    display: inline-block;
+}
+
+.album-cover {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Vertical Separator Accents */
+.line-decorator-left, .line-decorator-right {
+    position: absolute;
+    top: 15%;
+    width: 2px;
+    height: 130px;
+    background: linear-gradient(to bottom, transparent, #D3C2A3, transparent);
+}
+.line-decorator-left { left: -45px; }
+.line-decorator-right { right: -45px; }
+
+/* Container layout adjustment */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Spaces out your arrows and dots perfectly */
+}
+
+/* Strip default anchor link styling and design the dots */
+.carousel-indicators .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.4); /* Subtle unselected white */
+    border-radius: 50%;
+    text-decoration: none; /* Removes the underline */
+    transition: background-color 0.2s ease;
+}
+
+/* The current active page dot */
+.carousel-indicators .dot.active {
+    background-color: #FFFFFF; /* Bright solid white */
+}
+
+/* Hover effect for the dots */
+.carousel-indicators .dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Arrow styling */
+.carousel-indicators .arrow {
+    color: #FFFFFF;
+    text-decoration: none; /* Removes the blue link underline */
+    font-weight: bold;
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #D3C2A3, transparent);
+    margin: 25px 0;
+}
+
+/* Main Content Column Configurations */
+.main-content {
+    display: flex;
+    gap: 40px;
+}
+
+.description-column {
+    flex: 2;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.description-column p {
+    margin-bottom: 20px;
+}
+
+.phone-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-wrapper {
+    width: 280px;
+    height: 520px;
+    /* FIXED: Changed backslashes to forward slashes */
+    background-image: url('img/mobile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.phone-screen {
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    width: 180px;
+    height: 370px;
+    background-color: #4A1504;
+    color: #FFFFFF;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+}
+
+.phone-screen::-webkit-scrollbar {
+    display: none;
+}
+
+.lyrics-header {
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    margin-top: 0;
+    border-bottom: 1px solid #3d140b;
+    padding-bottom: 5px;
+}
+
+/* Tracklist Tray Segment */
+.tracks-footer {
+    margin-top: 35px;
+    background-color: #2D0A01; 
+    border: 1px solid #411306;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px 22px;
+}
+
+.track-link {
+    color: #B19B81;
+    font-size: 0.82rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.track-link:hover, .track-link.accent {
+    color: #FFFFFF;
+}

@@ -1,0 +1,294 @@
+/* Base Core Typography & Context Set */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: 'Georgia', serif;
+    color: #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Encapsulated Box Container Context */
+.unified-interface-box {
+    width: 100%;
+    max-width: 1050px;
+    background-color: #242424;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+/* Header & Album Frame Carousel Controls */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 320px;
+    padding: 10px 0;
+}
+
+.carousel-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+.album-border-wrapper {
+    border-top: 3px solid #777777;
+    border-left: 3px solid #777777;
+    border-right: 3px solid #777777;
+    border-bottom: none;
+    padding: 15px;
+    background: transparent;
+    display: inline-block;
+}
+
+.album-cover {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Linear Accents flanking Carousel viewports */
+.line-decorator-left, .line-decorator-right {
+    position: absolute;
+    top: 35%;
+    width: 2px;
+    height: 90px;
+    background: linear-gradient(to bottom, transparent, #555, transparent);
+}
+.line-decorator-left { left: 25%; }
+.line-decorator-right { right: 25%; }
+
+/* Navigation Indicator Control Layout links */
+.carousel-indicators {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.carousel-indicators .arrow, .carousel-indicators .dot {
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.carousel-indicators .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.carousel-indicators .dot.active, .carousel-indicators .arrow:hover, .carousel-indicators .dot:hover {
+    color: #fff;
+    background-color: #fff;
+}
+
+/* --- 1. NEW TREE ZONE & LARGE TREE PLACEMENT --- */
+.border-tree-zone {
+    position: relative;
+    width: 100%;
+    margin: 10px 0 30px 0; /* Creates spatial breathing room above the main content */
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #555, transparent);
+    margin: 0; /* Reset margin so it aligns exactly with tree bases */
+    position: relative;
+    z-index: 2;
+}
+
+.forest-trees {
+    /* Made them significantly larger */
+    width: 410px; 
+    height: 300px; 
+    background-image: url('/img/blacktree.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.50; /* Slightly increased opacity for better visibility */
+    position: absolute;
+    /* Aligns the bottom of the tree image right on top of the divider line */
+    bottom: 0px; 
+    z-index: 4;
+}
+
+.left-trees { 
+    left: -10px; 
+    background-position: left bottom; 
+}
+
+.right-trees { 
+    right: -10px; 
+    background-position: right bottom; 
+}
+
+
+/* --- 2. TEXT & PHONE COLUMN ADJUSTMENTS --- */
+.main-content {
+    display: grid;
+    /* Changed to 1.3fr 1fr to give the narrative column slightly more room */
+    grid-template-columns: 1.3fr 1fr; 
+    gap: 50px; /* Increased spacing gap between text and phone */
+    align-items: center; /* Vertically centers the phone relative to the text block */
+    position: relative;
+    z-index: 5;
+}
+
+.description-column p {
+    font-size: 14.5px; /* Marginally scaled up for easier reading against dark UI */
+    line-height: 1.8;
+    margin-bottom: 22px;
+    text-align: justify;
+    color: #b5b5b5;
+}
+
+.description-column p:last-child {
+    margin-bottom: 0;
+}
+
+.phone-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- ENLARGED DEVICE INTERFACE ENGINE --- */
+.phone-wrapper {
+    position: relative;
+    /* Increased from 270px width / 530px height */
+    width: 320px;     
+    height: 630px;    
+    margin: 0 auto; 
+}
+
+.phone-hardware {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.phone-screen {
+    position: absolute;
+    /* Recalculated positioning anchors to fit perfectly inside the larger phone frame */
+    top: 74px;
+    left: 50px;
+    width: 230px;     /* Expanded viewport width */
+    height: 450px;    /* Expanded viewport height */
+    background-color: #242424;
+    border-radius: 4px;
+    padding: 25px 20px;
+    overflow-y: auto;
+    z-index: 1;
+    color: #dddddd;
+}
+
+/* Customized Inner Content Scrollbar engine rules */
+.phone-screen::-webkit-scrollbar {
+    width: 4px;
+}
+.phone-screen::-webkit-scrollbar-thumb {
+    background-color: #3a3a3a;
+    border-radius: 4px;
+}
+
+.lyrics-header {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #888888;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+#lyrics-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Footer Section Grid & Fog Integration Layer styling */
+.tracks-footer {
+    margin-top: 40px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 35px 25px 60px 25px; /* Deep bottom padding to accommodate fog overlapping layout overlay safely */
+    position: relative;
+    overflow: hidden;
+}
+
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.track-link {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #8aa49e; /* Muted slate teal characteristic color node palette definition */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.track-link:hover, .track-link.accent {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+}
+
+/* Base Decoration Overlay: Grounded Fog Blend Vector Layout elements */
+.fog-decorator {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-image: url('/img/blackgrass.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 3;
+    pointer-events: none; /* Allows user to click links underneath overlay seamlessly */
+    opacity: 0.5;
+}
+
+/* Clean Dynamic Responsive breakpoint architecture styling controls mapping definitions */
+@media(max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    .tracks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .forest-trees {
+        display: none;
+    }
+}

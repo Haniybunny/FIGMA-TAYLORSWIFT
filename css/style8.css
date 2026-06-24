@@ -1,0 +1,246 @@
+/* Core Structural Layout Styling */
+body {
+    background-color: #101e2d;
+    font-family: "Georgia", serif;
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Master Box Wrapper from Screenshot Design */
+.unified-interface-box {
+    width: 90%;
+    max-width: 1000px;
+    background-color: #8faec4; /* Pastel sky blue background */
+    border: 1px solid #1a2a3a;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+    position: relative;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Header & Album Setup */
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 320px;
+    margin-bottom: 15px;
+}
+
+.carousel-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.album-border-wrapper {
+    /* Only apply borders to the top, left, and right */
+    border-top: 2px solid #dfd3bd;
+    border-left: 2px solid #dfd3bd;
+    border-right: 2px solid #dfd3bd;
+    border-bottom: none; /* Explicitly removes the bottom border */
+    
+    padding: 12px;
+    background: transparent;
+}
+
+.album-cover {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Absolute Floating Scatters for Birds */
+.bird-scatter {
+    position: absolute;
+    /* Increased dimensions for a larger profile */
+    width: 120px; 
+    height: 85px; 
+    
+    background-image: url('/img/bird.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+    z-index: 2;
+}
+/* Left Flying Flock Coordinates */
+.scatter-l1 { left: 4%; top: 15px; transform: rotate(-10deg); }
+.scatter-l2 { left: 16%; top: 90px; transform: rotate(5deg); }
+.scatter-l3 { left: 6%; top: 155px; transform: rotate(-3deg); }
+
+/* Right Flying Flock Coordinates */
+.scatter-r1 { right: 4%; top: 25px; transform: rotate(15deg); }
+.scatter-r2 { right: 18%; top: 80px; transform: rotate(-8deg); }
+.scatter-r3 { right: 7%; top: 160px; transform: rotate(4deg); }
+
+/* Clean Native Navigation Bar Dots & Arrows */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.carousel-indicators .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.carousel-indicators .dot.active {
+    background-color: #ffffff;
+}
+
+.carousel-indicators .arrow {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: #dfd3bd;
+    margin: 20px 0;
+}
+
+/* Split Column Layout Grid */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+    align-items: start;
+}
+
+.description-column p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+/* Phone Layout Shell Frame */
+.phone-wrapper {
+    width: 280px;
+    height: 520px;
+    background-image: url('/img/mobile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Virtual Scroll Viewport Inside Frame */
+.phone-screen {
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    width: 170px;
+    height: 362px;
+    background-color: #8faec4;
+    color: #ffffff;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: scroll; /* Forces standard custom viewport functionality */
+}
+
+/* Webkit Scrollbar Customization for layout screenshot styling matches */
+.phone-screen::-webkit-scrollbar {
+    width: 14px;
+}
+.phone-screen::-webkit-scrollbar-track {
+    background: #8faec4;
+}
+.phone-screen::-webkit-scrollbar-thumb {
+    background: #8faec4;
+    border-radius: 7px;
+    border: 2px solid #8faec4;
+}
+
+.lyrics-header {
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 5px;
+}
+
+#lyrics-content p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Interactive Footer & Sand System Accent Layout */
+.tracks-footer {
+    margin-top: 40px;
+    background-color: #dfc89d; /* Natural Beach Sand Base Color tint */
+    background-image: url('/img/sand.png');
+    background-repeat: repeat-x;
+    background-position: bottom;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+}
+
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 25px;
+}
+
+.track-link {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.track-link:hover, .track-link.accent {
+    color: #101e2d; /* High contrast select dark blue tone */
+}
+
+/* 1. First, make sure the footer container allows absolute positioning */
+.tracks-footer {
+    position: relative;  /* This acts as the anchor point for the shell */
+    overflow: visible;   /* CRITICAL: Prevents the footer from cutting the shell off */
+    /* Keep your existing footer styles below this line */
+}
+
+/* 2. Configure the shell decoration */
+.seashell-decorator {
+    display: block;
+    position: absolute;
+    bottom: -50px;         /* Distance from the bottom of the footer */
+    right: 15px;          /* Distance from the right edge of the footer */
+    width: 150px;          /* Ensure it has a physical width */
+    height: 150px;         /* Ensure it has a physical height */
+    z-index: 10;          /* Forces it to sit on top of background colors */
+    
+    /* Image setup */
+    background-image: url('/img/shells.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+   
+}
